@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planeta Conforto | Mobiliário de Qualidade para o Seu Lar</title>
+    <meta name="description" content="Descubra mobiliário de qualidade para sala de estar, sala de jantar e quarto na Planeta Conforto. Conforto e estilo para o seu lar.">
+    
+    <!-- Fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/forms.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg" />
+    <link rel="shortcut icon" href="favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="favicon/site.webmanifest" />
+     
+</head>
+
+<!--<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+  (function(){
+    emailjs.init("3         "); // Substitua pelo seu User ID do EmailJS
+  })();
+</script> -->
+
+<script>
+  document.querySelector('.contacto-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const params = {
+      nome: document.getElementById('nome').value,
+      email: document.getElementById('email').value,
+      assunto: document.getElementById('assunto').value,
+      mensagem: document.getElementById('mensagem').value,
+    };
+
+    emailjs.send("service_websitemails", "template_bttbxfp", params)
+      .then(function(response) {
+         alert("Mensagem enviada com sucesso!");
+      }, function(error) {
+         alert("Erro ao enviar: " + error.text);
+      });
+  });
+</script>
+
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo">
+                <img src="images/logo.png" alt="logo">
+                <h1 class="logo-text"><span>P</span>laneta <span>C</span>onforto</h1>
+            </div>
+            
+            <button class="mobile-toggle" aria-label="Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="#inicio" class="nav-link active">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#sala-estar" class="nav-link">Sala de Estar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#sala-jantar" class="nav-link">Sala de Jantar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#quarto" class="nav-link">Quarto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contactos" class="nav-link">Contactos</a>
+                    </li>
+                    <li class="nav-item carrinho-icon">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="carrinho-count">0</span>
+                        </a>
+                        
+                        <div class="carrinho-dropdown">
+                            <div class="carrinho-items">
+                                <div class="carrinho-empty">O seu carrinho está vazio</div>
+                                <!-- Itens do carrinho serão inseridos aqui via JavaScript -->
+                            </div>
+                            <div class="carrinho-total">
+                                <span>Total:</span>
+                                <span>0,00 Mzn</span>
+                            </div>
+                            <div class="carrinho-buttons">
+                                <a href="#" class="carrinho-btn carrinho-btn-ver">Ver Carrinho</a>
+                                <a href="#" class="carrinho-btn carrinho-btn-checkout">Checkout</a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio" style="background-image: url('images/hero-bg.jpg');">
+        <div class="container">
+            <div class="hero-content">
+                <h2 class="hero-title">Transforme a Sua Casa num <span>Planeta</span> de Conforto</h2>
+                <p class="hero-subtitle">Mobiliário de qualidade para sala de estar, sala de jantar e quarto.</p>
+                <div class="hero-buttons">
+                    <a href="#categorias" class="btn btn-destaque">Explorar Categorias</a>
+                    <a href="#contactos" class="btn btn-primario">Contacte-nos</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categorias Section -->
+    <section class="categorias" id="categorias">
+        <div class="container">
+            <h2 class="section-title">Nossas Categorias</h2>
+            <div class="categorias-grid">
+                <a href="#sala-estar" class="categoria-card">
+                    <div class="categoria-img-container">
+                        <img src="images/produtos/sala-estar/sala-estar.jpg" alt="Sala de Estar" class="categoria-img">
+                    </div>
+                    <div class="categoria-overlay">
+                        <h3 class="categoria-title">Sala de Estar</h3>
+                        <p class="categoria-count">Disponível</p>
+                    </div>
+                </a>
+                <a href="#sala-jantar" class="categoria-card">
+                    <div class="categoria-img-container">
+                        <img src="images/produtos/sala-jantar/mesa-jantar-extensivel.jpg" alt="Sala de Jantar" class="categoria-img">
+                    </div>
+                    <div class="categoria-overlay">
+                        <h3 class="categoria-title">Sala de Jantar</h3>
+                        <p class="categoria-count">Disponível</p>
+                    </div>
+                </a>
+                <a href="#quarto" class="categoria-card">
+                    <div class="categoria-img-container">
+                        <img src="images/produtos/quarto/cama-casal-estofada.jpg" alt="Quarto" class="categoria-img">
+                    </div>
+                    <div class="categoria-overlay">
+                        <h3 class="categoria-title">Quarto</h3>
+                        <p class="categoria-count">Disponível</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sala de Estar Section -->
+    <section class="produtos-section" id="sala-estar">
+        <div class="container">
+            <div class="produtos-header">
+                <h2 class="section-title">Sala de Estar</h2>
+                <div class="produtos-filtros">
+                    <select class="filtro-select" data-categoria="sala-estar">
+                        <option value="avaliacao">Melhor Avaliação</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="produtos-grid" id="produtos-sala-estar">
+                <!-- Produtos serão inseridos aqui via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Sala de Jantar Section -->
+    <section class="produtos-section" id="sala-jantar">
+        <div class="container">
+            <div class="produtos-header">
+                <h2 class="section-title">Sala de Jantar</h2>
+                <div class="produtos-filtros">
+                    <select class="filtro-select" data-categoria="sala-jantar">
+                        <option value="avaliacao">Melhor Avaliação</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="produtos-grid" id="produtos-sala-jantar">
+                <!-- Produtos serão inseridos aqui via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Quarto Section -->
+    <section class="produtos-section" id="quarto">
+        <div class="container">
+            <div class="produtos-header">
+                <h2 class="section-title">Quarto</h2>
+                <div class="produtos-filtros">
+                    <select class="filtro-select" data-categoria="quarto">                      
+                        <option value="avaliacao">Melhor Avaliação</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="produtos-grid" id="produtos-quarto">
+                <!-- Produtos serão inseridos aqui via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Vantagens Section -->
+    <section class="vantagens">
+        <div class="container">
+            <div class="vantagens-grid">
+                <div class="vantagem-item">
+                    <div class="vantagem-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <div class="vantagem-content">
+                        <h3>Entrega Rápida</h3>
+                        <p>Entregamos em todo o território nacional em 3-7 dias úteis.</p>
+                    </div>
+                </div>
+                <div class="vantagem-item">
+                    <div class="vantagem-icon">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <div class="vantagem-content">
+                        <h3>Garantia de Qualidade</h3>
+                        <p>Todos os nossos produtos têm garantia de 1 ano.</p>
+                    </div>
+                </div>
+                <div class="vantagem-item">
+                    <div class="vantagem-icon">
+                        <i class="fa-solid fa-thumbs-up"></i>
+                    </div>
+                    <div class="vantagem-content">
+                        <h3>Satisfação Garantida</h3>
+                        <p>Se não estiver satisfeito, devolvemos o seu dinheiro em 30 dias.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contactos Section -->
+     
+    <section class="contactos" id="contactos">
+        <div class="container">
+            <h2 class="section-title">Contacte-nos</h2>
+            <div class="contactos-grid">
+                <div class="contacto-form-container">
+                    <form class="contacto-form">
+                        <div class="form-group">
+                            <label for="nome">Nome</label>
+                            <input type="text" id="nome" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="assunto">Assunto</label>
+                            <input type="text" id="assunto" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="mensagem">Mensagem</label>
+                            <textarea id="mensagem" class="form-control" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primario">Enviar Mensagem</button>
+                    </form>
+                </div>
+                <div class="contacto-info-container">
+                    <div class="contacto-info">
+                        <h3>Informações de Contacto</h3>
+                        <p><i class="fas fa-map-marker-alt"></i> Rua.....</p>
+                        <p><i class="fas fa-phone"></i> +258 84 154 51 68</p>
+                        <p><i class="fas fa-envelope"></i> info@planetaconforto.com</p>
+                        <p><i class="fas fa-clock"></i> Segunda a Sexta: 08h - 17h | Sábado: 08h - 14h</p>
+                        
+                        <div class="mapa">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d533.4859531441252!2d32.46982305985948!3d-25.907254955026072!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ee68fe504ab9359%3A0xab5e5cba6e3f0308!2sExpresso!5e0!3m2!1spt-PT!2smz!4v1749812885351!5m2!1spt-PT!2smz" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>          
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Planeta Conforto</h4>
+                    <p>Transforme a sua casa num planeta de conforto com o nosso mobiliário de qualidade para sala de estar, sala de jantar e quarto.</p>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/share/16xkYYshXd/" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-pinterest"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Categorias</h4>
+                    <ul class="footer-links">
+                        <li><a href="#sala-estar">Sala de Estar</a></li>
+                        <li><a href="#sala-jantar">Sala de Jantar</a></li>
+                        <li><a href="#quarto">Quarto</a></li>
+                        <li><a href="#">Novidades</a></li>
+                        <li><a href="#">Promoções</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Informações</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Sobre Nós</a></li>
+                        <li><a href="#">Política de Privacidade</a></li>
+                        <li><a href="#">Termos e Condições</a></li>
+                        <li><a href="#">Entregas e Devoluções</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Contacto</h4>
+                    <div class="footer-contact">
+                        <p><i class="fas fa-map-marker-alt"></i> Rua ::::</p>
+                        <p><i class="fas fa-phone"></i> +258 87 154 51 68</p>
+                        <p><i class="fas fa-envelope"></i> info@planetaconforto.com</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>Formas de Pagamento</p>
+                <div class="payment-methods">
+                    <div class="payment-icon"><i class="fab fa-cc-visa"></i></div>
+                    <div class="payment-icon"><i class="fab fa-cc-mastercard"></i></div>
+                    <div class="payment-icon"><img src="images/icons/mpesa/favicon-32x32.png" alt=""></div>
+                    <div class="payment-icon"><img src="images/icons/emola/favicon-32x32.png" alt=""></div>
+                </div>
+                <p class="copyright">&copy; 2025 Planeta Conforto. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Button -->
+    <a href=https://wa.me/message/KPMJCBE3CDH2I1 class="whatsapp-btn" id="whatsapp-btn">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Modal de Produto -->
+   <!--<div class="produto-modal" id="produto-modal">
+        <div class="modal-container">
+            <button class="modal-close" id="modal-close">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-content">
+                <div class="modal-imagem">
+                    <img src="" alt="Produto" id="modal-img">
+                </div>
+                <div class="modal-info">
+                    <h3 id="modal-nome"></h3>
+                    <div class="modal-avaliacao">
+                        <div class="stars" id="modal-stars"></div>
+                        <span id="modal-avaliacao-valor"></span>
+                    </div>
+                    <div class="modal-preco" id="modal-preco"></div>
+                    <div class="modal-descricao" id="modal-descricao"></div>
+                    <div class="modal-acoes">
+                        <div class="modal-quantidade">
+                            <button class="quantidade-btn menos">-</button>
+                            <input type="number" value="1" min="1" max="10" id="modal-quantidade">
+                            <button class="quantidade-btn mais">+</button>
+                        </div>
+                        <button class="btn btn-primario adicionar-carrinho" id="modal-adicionar">
+                            <i class="fas fa-shopping-cart"></i> Adicionar ao Carrinho
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <!-- Carrinho Modal --
+    <div class="carrinho-modal" id="carrinho-modal">
+        <div class="modal-container">
+            <button class="modal-close" id="carrinho-modal-close">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-content">
+                <h3>Seu Carrinho</h3>
+                <div class="carrinho-modal-items" id="carrinho-modal-items">
+                    <!-- Itens do carrinho serão inseridos aqui via JavaScript --
+                </div>
+                <div class="carrinho-modal-empty" id="carrinho-modal-empty">
+                    <p>O seu carrinho está vazio</p>
+                    <a href="#categorias" class="btn btn-primario">Continuar Comprando</a>
+                </div>
+                <div class="carrinho-modal-footer" id="carrinho-modal-footer">
+                    <div class="carrinho-modal-total">
+                        <span>Total:</span>
+                        <span id="carrinho-modal-total-valor">0,00 Mzn</span>
+                    </div>
+                    <div class="carrinho-modal-buttons">
+                        <button class="btn btn-secundario" id="carrinho-modal-limpar">Limpar Carrinho</button>
+                        <button class="btn btn-primario" id="carrinho-modal-checkout">Finalizar Compra</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Scripts -->
+    <script src="js/config.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
+
